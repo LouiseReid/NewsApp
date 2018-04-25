@@ -7,7 +7,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View >
-        <Header headerText={'News'}/>
+        <Header headerText={'Sports News Now'} />
         <ArticleList />
       </View>
     );
