@@ -1,14 +1,12 @@
 import React from 'react';
 import { View, Text, Image, Linking } from 'react-native';
 import { Button, Card, CardSection } from './common';
+import awaiting from "./awaiting.png";
 
 
 const ArticleDetail = ({ article }) => {
 
   const { title, description, url, urlToImage  } = article
-  console.log(article);
-
-
 
   return (
     <Card>
@@ -19,13 +17,14 @@ const ArticleDetail = ({ article }) => {
         </View>
       </CardSection>
       <CardSection>
-        <Image source={{url: urlToImage || ""}} style={styles.imageStyle} />
+        <Image source={urlToImage ? { uri: urlToImage } : require("./awaiting.png")}
+      style={styles.imageStyle}/>
       </CardSection>
       <CardSection>
         <Button onPress={() => Linking.openURL(url)}>
           Read More
         </Button>
-       </CardSection>
+      </CardSection>
     </Card>
   );
 };

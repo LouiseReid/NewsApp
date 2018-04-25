@@ -2,8 +2,10 @@ import React from 'react';
 import { View } from 'react-native';
 
 const Card = (props) => {
+  // any componet that is passed into this object will show up on the props object as props.children
   return (
     <View style={styles.containerStyle}>
+      {/* renders any component passed to this section */}
       {props.children}
     </View>
   );
