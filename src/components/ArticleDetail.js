@@ -4,20 +4,22 @@ import { Button, Card, CardSection } from './common';
 
 
 const ArticleDetail = ({ article }) => {
-  const { title, description, url, urlToImage  } = article;
+
+  const { title, description, url, urlToImage  } = article
+  console.log(article);
+
+
+
   return (
     <Card>
       <CardSection>
-        <View style={styles.thumbnailContainerStyle}>
-          <Image source={{ uri: urlToImage }} style={styles.thumbnailStyle} />
-        </View>
         <View style={styles.headerContentStyle}>
           <Text style={styles.headerTextStyle}>{title}</Text>
-          <Text>{title}</Text> */}
+          <Text>{description}</Text>
         </View>
       </CardSection>
       <CardSection>
-        <Image source={{ uri: 'urlToImage'  }} style={styles.imageStyle} />
+        <Image source={{url: urlToImage || ""}} style={styles.imageStyle} />
       </CardSection>
       <CardSection>
         <Button onPress={() => Linking.openURL(url)}>
@@ -39,12 +41,6 @@ const styles = {
   thumbnailStyle: {
     height: 50,
     width: 50
-  },
-  thumbnailContainerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 10,
-    marginRight: 10
   },
   imageStyle: {
     height: 300,
